@@ -196,7 +196,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     public int lastIndexOf(E e) {
         int lastIndex = -1;
         Node<E> current = head;
-        for(int i=0; i<size;){
+        for(int i=0; i<size;i++){
             if(current.element.equals(e))
                 lastIndex = i;
             else
