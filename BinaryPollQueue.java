@@ -1,6 +1,6 @@
 package lab8;
 
-/* WRITE YOUR NAME HERE */
+/* wschottl */
 
 
 /* Implements a FIFO-Priority Queue using two LIFO Stacks.
@@ -17,6 +17,12 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
     /* Two LIFO Stacks to act as the container of this BinaryPollQueue. DO NOT CHANGE!!! */
     private Stack<E> stk1;
     private Stack<E> stk2;
+    
+    public BinaryPollQueue(){
+        stk1 = new Stack();
+        stk2 = new Stack();
+    }//constructor
+
     
     public boolean offer(E e){
         stk1.push(e);
@@ -47,21 +53,22 @@ public class BinaryPollQueue<E extends Comparable<E>> { // Do not change this li
     
     
     public E priorityPoll(){
-        E maxPriority = stk1.peek();
+        E maxPriority = stk1.peek();// sets initial value
         while(!stk1.isEmpty()){
-            if(stk1.peek().compareTo(maxPriority)>=0){
-                maxPriority = stk2.pop();
+            if(stk1.peek().compareTo(maxPriority) >= 0){
+                maxPriority = stk1.peek();
             }//if
             stk2.push(stk1.pop());
         }//while
         while(!stk2.isEmpty()){
             if(maxPriority.equals(stk2.peek())){
-                maxPriority = stk2.pop();
+                maxPriority = stk2.pop();   
             }//if
             stk1.push(stk2.pop());
         }//while
         return maxPriority;
-    }//elementPoll
+    }//Priority Poll
+
 }
 
 
