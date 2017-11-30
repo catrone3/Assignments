@@ -82,4 +82,4 @@ public class Linked {
         return ans;
     }//contains
     
-}
+}//class

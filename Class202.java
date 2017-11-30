@@ -1,5 +1,4 @@
 package class202;
-import java.util.*;
 
 /**
  *
@@ -18,5 +17,5 @@ public class Class202 {
         System.out.println("Midoriya is on the list: "+ans.contains("Midoriya"));
     }//main
     
-}//class22
+}//class
 
