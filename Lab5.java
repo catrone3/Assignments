@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package lab.pkg5;
+package lab5;
 
 /**
  *
  * @author wschottl
  */
 public class Lab5 {
-    
-    
+
     public static void knapSack(int maxWeight){
-        int[] v = {30,25,20,40};//{10,40,30,50,20,70,80,90};
-        int[] w ={3,4,2,5};//{5,4,6,3,2,7,1,3};
+        int[] v = {10,40,30,50,20,70,80,90};
+        int[] w ={5,4,6,3,2,7,1,3};
         
         int W = maxWeight;
         
@@ -33,8 +27,8 @@ public class Lab5 {
                     V[i][j] = V[i-1][j];
                     keep[i][j] = 0;
                 }//else    
-            }//forj
-        }//fori
+            }//for j
+        }//for i
         
         int K = W;
         
@@ -44,13 +38,13 @@ public class Lab5 {
                 System.out.print(i-1+", ");
                 K = K - w[i-1];
             }//if
-        }//fori
+        }//for i
          System.out.println("");
          System.out.println(" \nFor a total value of: "+V[v.length][W]+"\n");
     }//knapSack
     public static void main(String[] args) {
        Lab5 ans = new Lab5();
-        Lab5.knapSack(30);
+        ans.knapSack(30);
        
     }//main
     
